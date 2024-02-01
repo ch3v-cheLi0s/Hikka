@@ -27,7 +27,7 @@ eval "rm -rf ~/Hikka 2>/dev/null"
 eval "cd && git clone https://github.com/hikariatama/Hikka && cd Hikka"
 
 echo -e "\033[0;96mSource code downloaded!...\033[0m\n"
-printf "\r\033[0;34mInstalling requirements...\e[0m"
+printf "\r\033[0;34mInstalling requirements...\e[0m\n"
 
 eval "pip install -r requirements.txt --no-cache-dir --no-warn-script-location --disable-pip-version-check --upgrade"
 
