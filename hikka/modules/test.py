@@ -349,7 +349,7 @@ class TestMod(loader.Module):
     @loader.command()
     async def ping(self, message: Message):
         start = time.perf_counter_ns()
-        message = await utils.answer(message, "🌘")
+        message = await utils.answer(message, "💀")
 
         await utils.answer(
             message,
