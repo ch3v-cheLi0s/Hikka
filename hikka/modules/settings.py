@@ -210,8 +210,8 @@ class CoreMod(loader.Module):
             await utils.answer(message, self.strings("alias_args"))
             return
 
-        alias, cmd = args
-        if self.allmodules.add_alias(alias, cmd):
+        cmd, alias = args
+        if self.allmodules.add_alias(cmd, alias):
             self.set(
                 "aliases",
                 {
