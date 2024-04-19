@@ -2,7 +2,7 @@
 
 echo -e "\033[2J\033[3;1f"
 
-eval "wget https://github.com/ch3v-cheLi0s/Hikka/assets/raw/master/download.txt && cat download.txt && rm download.txt"
+eval "wget https://github.com/ch3v-cheLi0s/Hikka/raw/master/assets/download.txt && cat download.txt && rm -f download.txt"
 
 printf "\n\n\033[1;35mHikka is being installed... ✨\033[0m"
 
@@ -19,7 +19,7 @@ else
     eval 'export LDFLAGS="-L/system/lib/"'
 fi
 
-eval 'export CFLAGS="-I/data/data/com.termux/files/usr/include/" && pip install Pillow=9.5.0 --no-cache-dir'
+eval 'export CFLAGS="-I/data/data/com.termux/files/usr/include/" && pip install Pillow==9.5.0 --no-cache-dir'
 
 printf "\r\033[K\033[0;32mPillow installed!\e[0m\n"
 echo -e "\033[0;96mDownloading source code...\033[0m"
@@ -38,7 +38,7 @@ if [[ -z "${NO_AUTOSTART}" ]]; then
     printf "\n\r\033[0;34mConfiguring autostart...\e[0m"
 
     eval "echo '' > ~/../usr/etc/motd &&
-    echo 'clear && . <(wget -qO- https://github.com/hikariatama/Hikka/raw/master/banner.sh) && cd ~/Hikka && python3 -m hikka' > ~/.bash_profile"
+    echo 'clear && . <(wget -qO- https://github.com/ch3v-cheLi0s/Hikka/raw/master/banner.sh) && cd ~/Hikka && python3 -m hikka' > ~/.bash_profile"
 
     printf "\r\033[K\033[0;32mAutostart enabled!\e[0m\n"
 fi
