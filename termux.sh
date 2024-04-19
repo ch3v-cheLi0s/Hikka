@@ -2,7 +2,8 @@
 
 echo -e "\033[2J\033[3;1f"
 
-eval "cat ~/Hikka/assets/download.txt"
+eval "wget https://github.com/ch3v-cheLi0s/Hikka/assets/raw/master/download.txt && cat download.txt && rm download.txt"
+
 printf "\n\n\033[1;35mHikka is being installed... ✨\033[0m"
 
 echo -e "\n\n\033[0;96mInstalling base packages...\033[0m"
@@ -18,13 +19,13 @@ else
     eval 'export LDFLAGS="-L/system/lib/"'
 fi
 
-eval 'export CFLAGS="-I/data/data/com.termux/files/usr/include/" && pip install Pillow -U --no-cache-dir'
+eval 'export CFLAGS="-I/data/data/com.termux/files/usr/include/" && pip install Pillow=9.5.0 --no-cache-dir'
 
 printf "\r\033[K\033[0;32mPillow installed!\e[0m\n"
 echo -e "\033[0;96mDownloading source code...\033[0m"
 
 eval "rm -rf ~/Hikka 2>/dev/null"
-eval "cd && git clone https://github.com/hikariatama/Hikka && cd Hikka"
+eval "cd && git clone https://github.com/ch3v-cheLi0s/Hikka && cd Hikka"
 
 echo -e "\033[0;96mSource code downloaded!...\033[0m\n"
 printf "\r\033[0;34mInstalling requirements...\e[0m\n"
