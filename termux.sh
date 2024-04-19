@@ -2,7 +2,7 @@
 
 echo -e "\033[2J\033[3;1f"
 
-eval "wget https://github.com/ch3v-cheLi0s/Hikka/raw/master/assets/download.txt && cat download.txt && rm -f download.txt"
+eval "wget -q https://github.com/ch3v-cheLi0s/Hikka/raw/master/assets/download.txt && cat download.txt && rm -f download.txt"
 
 printf "\n\n\033[1;35mHikka is being installed... ✨\033[0m"
 
