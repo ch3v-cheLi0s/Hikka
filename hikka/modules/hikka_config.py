@@ -49,9 +49,9 @@ class HikkaConfigMod(loader.Module):
 
     def hide_value(self, value: typing.Any) -> str:
         if isinstance(value, list) and value:
-            return self.prep_value(["*" * len(str(i)) for i in value])
+            return self.prep_value(["⛆" * len(str(i)) for i in value])
 
-        return self.prep_value("*" * len(str(value)))
+        return self.prep_value("⛆" * len(str(value)))
 
     def _get_value(self, mod: str, option: str) -> str:
         return (
