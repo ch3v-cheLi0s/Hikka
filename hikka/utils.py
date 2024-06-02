@@ -94,7 +94,7 @@ from hikkatl.tl.types import (
 )
 
 from ._internal import fw_protect
-from .inline.types import InlineCall, InlineMessage
+from .inline.types import BotInlineCall, InlineCall, InlineMessage
 from .tl_cache import CustomTelegramClient
 from .types import HikkaReplyMarkup, ListLike, Module
 
@@ -466,7 +466,7 @@ async def answer(
 
         if reply_markup:
             kwargs.pop("message", None)
-            if isinstance(message, (InlineMessage, InlineCall)):
+            if isinstance(message, (InlineMessage, InlineCall, BotInlineCall)):
                 await message.edit(response, reply_markup, **kwargs)
                 return
 
@@ -479,7 +479,7 @@ async def answer(
             )
             return result
 
-    if isinstance(message, (InlineMessage, InlineCall)):
+    if isinstance(message, (InlineMessage, InlineCall, BotInlineCall)):
         await message.edit(response)
         return message
 
