@@ -93,7 +93,7 @@ IS_WSL = False
 with contextlib.suppress(Exception):
     from platform import uname
 
-    if "microsoft-standard" in uname().release:
+    if "microsoft" in uname().release.lower():
         IS_WSL = True
 
 # fmt: off
@@ -552,8 +552,8 @@ class Hikka:
                 proxy=self.proxy,
                 connection_retries=None,
                 device_model=get_app_name(),
-                system_version="Windows 10",
-                app_version=".".join(map(str, __version__)) + " x64",
+                system_version="Linux",
+                app_version="Hikka v" + ".".join(map(str, __version__)),
                 lang_code="en",
                 system_lang_code="en-US",
             )
@@ -683,8 +683,8 @@ class Hikka:
                     proxy=self.proxy,
                     connection_retries=None,
                     device_model=get_app_name(),
-                    system_version="Windows 10",
-                    app_version=".".join(map(str, __version__)) + " x64",
+                    system_version="Linux",
+                    app_version="Hikka v" + ".".join(map(str, __version__)),
                     lang_code="en",
                     system_lang_code="en-US",
                 )
@@ -784,7 +784,7 @@ class Hikka:
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
                 "https://github.com/hikariatama/assets/raw/master/hikka_banner.mp4",
                 caption=(
-                    "🌘 <b>Hikka {} started!</b>\n\n🌳 <b>GitHub commit SHA: <a"
+                    "🎃 <b>Hikka v{} started!</b>\n\n🌳 <b>GitHub commit SHA: <a"
                     ' href="https://github.com/hikariatama/Hikka/commit/{}">{}</a></b>\n✊'
                     " <b>Update status: {}</b>\n<b>{}</b>".format(
                         ".".join(list(map(str, list(__version__)))),
