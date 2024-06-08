@@ -196,26 +196,6 @@ class TokenObtainment(InlineUnit):
                     await m.delete()
                     await r.delete()
 
-                    for msg in [
-                        "/setinline",
-                        button.text,
-                        "user@hikka:~$",
-                        "/setinlinefeedback",
-                        button.text,
-                        "Enabled",
-                    ]:
-                        await fw_protect()
-                        m = await conv.send_message(msg)
-                        r = await conv.get_response()
-
-                        logger.debug(">> %s", m.raw_text)
-                        logger.debug("<< %s", r.raw_text)
-
-                        await fw_protect()
-
-                        await m.delete()
-                        await r.delete()
-
                     return True
 
         return await self._create_bot() if create_new_if_needed else False
