@@ -673,6 +673,7 @@ class LoaderMod(loader.Module):
                             "-q",
                             "--disable-pip-version-check",
                             "--no-warn-script-location",
+                            "--root-user-action=ignore",
                             *["--user"] if loader.USER_INSTALL else [],
                             *requirements,
                         )
